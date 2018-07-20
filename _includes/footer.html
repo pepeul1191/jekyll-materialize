@@ -1,1 +1,5 @@
-<h1>footer</h1>
+{% if site.data.env.ambiente_static == 'desarrollo' %}
+  <script  type="text/javascript" src="{{ site.url }}/bower_components/jquery/dist/jquery.min.js"></script>
+{% else if site.data.env.ambiente_static == 'produccion'%}
+  <script  type="text/javascript" src="/dist/site.min.js"></script>
+{% endif %}
