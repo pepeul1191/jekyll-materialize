@@ -1,13 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-});
-
-// Or with jQuery
-
 $(document).ready(function(){
   $('.parallax').parallax();
   $('.sidenav').sidenav();
   $('.slider').slider();
+  $('.modal').modal();
 
   $(window).scroll(function(){
     if($(window).scrollTop() > 300){
@@ -25,4 +20,21 @@ $(document).ready(function(){
 
   var elems = document.querySelectorAll('.slider');
   var instances = M.Slider.init(elems, {'height' : 770, 'indicators' : true});
+});
+
+$('#terminos-condiciones').click(function(){
+  $('#modal1').empty();
+  $('#modal-btn').click();
+  var template = null;
+	$.ajax({
+	   url: BASE_URL + '/modals/terminos-condiciones.html',
+	   type: "GET",
+	   async: false,
+	   success: function(source) {
+	     template = source;
+	   }
+	});
+  $('#modal1').append(template);
+  var btnModal = document.getElementById('modal-btn');
+  btnModal.click();
 });
