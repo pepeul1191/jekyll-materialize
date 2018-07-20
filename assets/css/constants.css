@@ -1,0 +1,16 @@
+:root {
+  --error-color: #a94442;
+  --primary-color: #009ee3;
+  --secondary-color: #2979ff;
+  --link-color-primary: --primary-color;
+  --link-color: --primary-color;
+  --background-primary-color: #F1EFE2;;
+  --background-secondary-color: #FDFDFD;
+  --nav-primary-color: #FDFDFD;
+  --nav-secondary-color: #009ee3;
+  --nav-text-primary-color: #fff;
+  --nav-text-secondary-color: #fdfdfd;
+  --footer-background-primary: #2979ff;
+  --footer-text-primary-color: #fff;
+  --footer-text-secondary-color: yellow;
+}

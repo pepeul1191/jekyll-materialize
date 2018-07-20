@@ -1,0 +1,8 @@
+
+.nav-wrapper > .brand-logo{
+  padding: 10px !important;
+}
+
+a {
+  color: var(--primary-color) !important;
+}
