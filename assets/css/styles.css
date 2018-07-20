@@ -22,3 +22,7 @@ nav i.material-icons{ font-size: 40px; }
 .link .info span { color: #ffbb06; font-size: 30px; }
 .link .info h6 { margin-top: 10px; margin-bottom: 10px; }
 .link .info p.p-style{ font-family: sans-serif; font-weight: bold; }
+/*-- footer --*/
+.tarjeta{
+  padding-bottom: 20px;
+}
