@@ -3,10 +3,13 @@
   <link rel="shortcut icon" href="{{ site.url }}/assets/img/favicon.ico">
   <title>{{page.title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Jekyll v3.8.3" />
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/bower_components/materialize/dist/css/materialize.min.css"/>
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/styles.css"/>
   {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}
   {% endif %}
   <script type="text/javascript">
-    var BASE_URL = '{{ site.url }}/';
+    var BASE_URL = '{{ site.url }}';
   </script>
 </head>
