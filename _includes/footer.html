@@ -1,6 +1,7 @@
 {% if site.data.env.ambiente_static == 'desarrollo' %}
   <script  type="text/javascript" src="{{ site.url }}/bower_components/jquery/dist/jquery.min.js"></script>
   <script  type="text/javascript" src="{{ site.url }}/bower_components/materialize/dist/js/materialize.min.js"></script>
+  <script  type="text/javascript" src="{{ site.url }}/assets/js/site.js"></script>
 {% else if site.data.env.ambiente_static == 'produccion'%}
   <script  type="text/javascript" src="/dist/site.min.js"></script>
 {% endif %}
