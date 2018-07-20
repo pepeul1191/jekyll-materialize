@@ -20,3 +20,4 @@ Fuentes:
 + https://github.com/pepeul1191/slimphp-boilerplate
 + https://jekyllrb.com/docs/usage/
 + https://jekyllrb.com/docs/themes/
++ https://jekyllrb.com/docs/variables/
