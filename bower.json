@@ -23,5 +23,6 @@
     "tests"
   ],
   "dependencies": {
+    "materialize": "1.0.0-rc.2"
   }
 }
