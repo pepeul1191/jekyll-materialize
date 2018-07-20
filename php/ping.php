@@ -4,6 +4,13 @@
     echo 'nombre: ' . $_GET['nombre'] . '<br>';
   }
   $rpta = '';
+  $url = $_SERVER['REQUEST_URI'];
+  $parts = parse_url($url);
+  $path = $parts['path'];
+  $path = explode('/', $path);
+  var_dump($url);
+  var_dump($path);
+  var_dump(end($path));
   try {
     $config = require 'config.php';
     $db = call_user_func($config['db']);
