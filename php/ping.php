@@ -1,5 +1,13 @@
 <?php
 
+  ini_set('display_errors',1);
+
+  header('x-powered-by: PHP');
+  header('Server: Ubuntu');
+  header("Access-Control-Allow-Origin: http://localhost:4000");
+  header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+  header('Content-type: text/html; charset=UTF-8');
+
   if(isset($_GET['nombre']) && !empty($_GET['nombre'])) {
     echo 'nombre: ' . $_GET['nombre'] . '<br>';
   }
