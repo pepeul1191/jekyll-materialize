@@ -14,6 +14,7 @@ Comandos:
 
 + https://codepen.io/rikato/pen/OVdaWM
 + https://www.youtube.com/watch?v=aqx6WLdIpJk&t=18s
++ http://preview.themeforest.net/item/foxira-personal-portfolio/full_screen_preview/20453738?_ga=2.135558193.1238810066.1532106249-1243019437.1521222504
 
 ---
 
@@ -27,3 +28,5 @@ Fuentes:
 + https://jekyllrb.com/docs/themes/
 + https://jekyllrb.com/docs/variables/
 + https://materializecss.com/color.html
++ http://foxira-theme22.bitballoon.com/css/style.css
++ https://materializecss.com/icons.html

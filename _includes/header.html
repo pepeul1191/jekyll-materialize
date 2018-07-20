@@ -1,17 +1,20 @@
 <nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">
-      <img src="{{ site.url }}/assets/img/logo-coa-blanco.png" alt="">
-    </a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-      <i class="material-icons">menu</i>
-    </a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      {% for menu in site.data.menu %}
-        <li><a href="{{ menu.url }}">{{ menu.nombre }}</a></li>
-      {% endfor %}
-    </ul>
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">
+        <img src="{{ site.url }}/assets/img/logo-coa-blanco.png" alt="">
+      </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {% for menu in site.data.menu %}
+          <li><a href="{{ menu.url }}">{{ menu.nombre }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
+
 </nav>
 <ul class="sidenav" id="mobile-demo">
   {% for menu in site.data.menu %}

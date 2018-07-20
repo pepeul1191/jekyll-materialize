@@ -1,54 +1,24 @@
-
-.nav-wrapper > .brand-logo{
-  padding: 10px !important;
-}
-
-.color-primary {
-  color: var(--primary-color) !important;
-}
-
-.page-footer {
-  background-color: var(--primary-color);
-}
-
-nav {
-  position: fixed;
-  background: rgba(0, 0 ,0, 0.25);
-  padding: 0px 20px;
-  z-index: 100;
-}
-
-nav i.material-icons{
-  font-size: 40px;
-}
-
-#parallax1{
-  height: 700px;
-}
-
-.slides{
-  height: 700px;
-}
-
-.active {
-  background-color: var(--primary-color) !important;
-}
-
-.slides > li > .caption {
-  background-color: rgba(27, 110 , 138, 0.25);
-}
-
-.slides > li > .caption > h4, .slides > li > .caption > h5 {
-  color: #FFF !important;
-}
-
-.slides > li > .caption > h4 {
-  font-weight: bold;
-}
-
-.slider > .slides > li .caption {
-  top: 25%;
-  left: 15%;
-  padding: 20px;
-  width: 25%;
-}
+/*-- body -- */
+body{ font-family: 'Raleway', sans-serif; }
+.bold{ font-weight: bold;}
+.color-grey{ color: #616161; }
+/*-- nav --*/
+.nav-wrapper > .brand-logo{ padding: 10px !important; }
+.color-primary { color: var(--primary-color) !important; }
+.page-footer { background-color: var(--primary-color); }
+nav { position: fixed; background: rgba(0, 0 ,0, 0.25); padding: 0px 20px; z-index: 100; }
+nav i.material-icons{ font-size: 40px; }
+.active { background-color: var(--primary-color) !important; }
+/*-- slider--*/
+.slides > li > .caption { background-color: rgba(27, 110 , 138, 0.25); }
+.slides > li > .caption > h4, .slides > li > .caption > h5 { color: #FFF !important; }
+.slides > li > .caption > h4 { font-weight: bold; }
+.slider > .slides > li .caption { top: 25%; left: 15%; padding: 20px; width: 25%; }
+.slides{ height: 700px; }
+/*-- seccion links--*/
+#links { padding-top: 40px; padding-bottom: 40px; background: #e9eaed; }
+.links .info { background: #fff; padding-top: 15px; padding-bottom: 15px; transition: 0.4s; margin-top: 20px; }
+.info:hover{ box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3); cursor: pointer; }
+.link .info span { color: #ffbb06; font-size: 30px; }
+.link .info h6 { margin-top: 10px; margin-bottom: 10px; }
+.link .info p.p-style{ font-family: sans-serif; font-weight: bold; }
