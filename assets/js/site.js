@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 $(document).ready(function(){
   $('.parallax').parallax();
   $('.sidenav').sidenav();
+  $('.slider').slider();
 
   $(window).scroll(function(){
     if($(window).scrollTop() > 300){
@@ -20,5 +21,8 @@ $(document).ready(function(){
       $('nav i.material-icons').removeClass('color-primary');
       $('.brand-logo img').attr('src',BASE_URL + '/assets/img/logo-coa-blanco.png');
     }
-  })
+  });
+
+  var elems = document.querySelectorAll('.slider');
+  var instances = M.Slider.init(elems, {'height' : 770, 'indicators' : true});
 });

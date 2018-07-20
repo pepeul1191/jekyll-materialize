@@ -25,3 +25,30 @@ nav i.material-icons{
 #parallax1{
   height: 700px;
 }
+
+.slides{
+  height: 700px;
+}
+
+.active {
+  background-color: var(--primary-color) !important;
+}
+
+.slides > li > .caption {
+  background-color: rgba(27, 110 , 138, 0.25);
+}
+
+.slides > li > .caption > h4, .slides > li > .caption > h5 {
+  color: #FFF !important;
+}
+
+.slides > li > .caption > h4 {
+  font-weight: bold;
+}
+
+.slider > .slides > li .caption {
+  top: 25%;
+  left: 15%;
+  padding: 20px;
+  width: 25%;
+}
