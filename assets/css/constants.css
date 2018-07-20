@@ -1,6 +1,7 @@
 :root {
   --error-color: #a94442;
   --primary-color: #009ee3;
+  --white-color: #009ee3;
   --secondary-color: #2979ff;
   --link-color-primary: --primary-color;
   --link-color: --primary-color;

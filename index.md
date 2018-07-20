@@ -7,7 +7,7 @@ title: Bienvenido
 lang: es
 ---
 
-<div class="parallax-container">
+<div class="parallax-container" id="parallax1">
   <div class="parallax"><img src="{{ site.url }}/assets/img/foto01.jpg"></div>
 </div>
 <div class="section white">

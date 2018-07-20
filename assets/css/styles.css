@@ -3,10 +3,20 @@
   padding: 10px !important;
 }
 
-a {
+.color-primary {
   color: var(--primary-color) !important;
 }
 
 .page-footer {
   background-color: var(--primary-color);
+}
+
+nav {
+  position: fixed;
+  background: rgba(0, 0 ,0, 0.25);
+  padding: 0px 20px;
+}
+
+#parallax1{
+  height: 700px;
 }
