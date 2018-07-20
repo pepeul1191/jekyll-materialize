@@ -6,4 +6,6 @@ layout: home
 title: Bienvenido
 lang: es
 ---
-hola, anda oe
+hola, anda oe <br>
+
+ambient_stat {{site.data.env.ambiente_static}}
