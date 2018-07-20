@@ -1,0 +1,12 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="{{ site.url }}/assets/img/favicon.ico">
+  <title>{{page.title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+  <script type="text/javascript">
+    var BASE_URL = '{{ site.url }}/';
+  </script>
+</head>

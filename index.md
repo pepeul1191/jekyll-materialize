@@ -4,5 +4,6 @@
 
 layout: home
 title: Bienvenido
+lang: es
 ---
 hola, anda oe
