@@ -25,6 +25,7 @@ $(document).ready(function(){
 $('#terminos-condiciones').click(function(){
   $('#modal1').empty();
   $('#modal-btn').click();
+  $('#modal1').css('max-height', '50%');
   var template = null;
 	$.ajax({
 	   url: BASE_URL + '/modals/terminos-condiciones.html',
