@@ -40,3 +40,11 @@ $('#terminos-condiciones').click(function(){
   var btnModal = document.getElementById('modal-btn');
   btnModal.click();
 });
+
+function myMap() {
+  var mapOptions = {
+    center: new google.maps.LatLng(-12.097211298666057, -77.03266450118309),
+    zoom: 15,
+  }
+  var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
+}

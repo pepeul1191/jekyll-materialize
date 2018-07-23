@@ -6,13 +6,16 @@ body{ font-family: 'Raleway', sans-serif; }
 .fondo-primary{    background-color: var(--primary-color); color: #FFF;}
 ul.browser-default li { list-style-type: initial; }
 .select-wrapper+label{ font-size: 1.1rem; color: var(--primary-color); font-weight: bold; top: -35px;}
+/*-- forms --*/
+.input-field{ margin-top: 0rem; margin-bottom: 0rem;}
+textarea.materialize-textarea{height: 10rem;}
 /*-- nav --*/
 .nav-wrapper > .brand-logo{ padding: 10px !important; }
 .color-primary { color: var(--primary-color) !important; }
 .page-footer { background-color: var(--primary-color); }
 nav { position: fixed; background: rgba(0, 0 ,0, 0.25); padding: 0px 20px; z-index: 100; }
 nav i.material-icons{ font-size: 40px; }
-.active { background-color: var(--primary-color) !important; }
+.indicators > .active { background-color: var(--primary-color) !important; }
 /*-- slider--*/
 .slides > li > .caption { background-color: rgba(27, 110 , 138, 0.25); }
 .slides > li > .caption > h4, .slides > li > .caption > h5 { color: #FFF !important; }
@@ -77,3 +80,11 @@ section{ padding-top: 25px; padding-bottom: 25px; }
 #servicios > .container > .row > div > .info > p {text-align: left;}
 #servicios > .container > .row > div > .info > h6 {font-weight: bold;}
 #servicios > .container > .row > div > .info > a {text-align: right;}
+/*-- contacto  --*/
+#contacto{padding-top: 0px; padding-bottom: 0px;}
+#contacto > .row { margin-bottom: 0px;}
+#contacto > .row > .col > .container { margin-top: 40px; margin-bottom: 40px; }
+#mapa { height: 921px; }
+@media only screen and (min-width: 993px){
+  #contacto > .row > .col > .container > .l12 { margin-left:25%; width: 90%;}
+}
