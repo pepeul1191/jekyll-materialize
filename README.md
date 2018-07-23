@@ -15,7 +15,13 @@ Comandos:
 + https://codepen.io/rikato/pen/OVdaWM
 + https://www.youtube.com/watch?v=aqx6WLdIpJk&t=18s
 + http://preview.themeforest.net/item/foxira-personal-portfolio/full_screen_preview/20453738?_ga=2.135558193.1238810066.1532106249-1243019437.1521222504
++ https://codepen.io/manabox/pen/GrjMpm
 
+
+## Ejemplos Diseño
+
++ https://www.w3schools.com/howto/howto_css_split_screen.asp
++ https://codepen.io/osmanyazici/pen/eJxmxo
 ---
 
 Fuentes:

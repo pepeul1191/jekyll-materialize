@@ -3,6 +3,7 @@ body{ font-family: 'Raleway', sans-serif; }
 .bold{ font-weight: bold;}
 .color-grey{ color: #616161; }
 .oculto {display: none;}
+.fondo-primary{    background-color: var(--primary-color); color: #FFF;}
 ul.browser-default li {
   list-style-type: initial;
 }

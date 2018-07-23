@@ -1,0 +1,14 @@
+html { height: 100%; width: 100%; }
+body { display: table; height: 100%; margin: 0; padding: 0; width: 100%; }
+.row { display: table-row; height: 50%; }
+.row:nth-child(1) { }
+.row:nth-child(2) { }
+.material-icons{ display: inline-flex; vertical-align: top; }
+h1 { font-size: 14rem; vertical-align: text-bottom!important; margin-top: 20%; }
+h2 { font-size: 2rem; }
+a{ font-size:16px; line-height:16px; }
+.material-icons{ font-size:20px; margin-right:5px; }
+
+@media only screen and (max-width: 768px) {
+    h1 { margin-top: 40%; }
+}

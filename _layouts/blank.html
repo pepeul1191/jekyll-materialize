@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {% include head.html %}
+  {% include head_error.html %}
 <body>
-  {{ content }}
+  {% include error404.html %}
 </body>
 </html>
