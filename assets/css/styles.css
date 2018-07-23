@@ -18,17 +18,24 @@ nav i.material-icons{ font-size: 40px; }
 .slides > li > .caption { background-color: rgba(27, 110 , 138, 0.25); }
 .slides > li > .caption > h4, .slides > li > .caption > h5 { color: #FFF !important; }
 .slides > li > .caption > h4 { font-weight: bold; }
-.slider > .slides > li .caption { top: 25%; left: 15%; padding: 20px; width: 25%; }
+.slider > .slides > li .caption { top: 40%; left: 15%; padding: 20px; }
 .slides{ height: 700px; }
 /*-- seccion links--*/
 #links { padding-top: 40px; padding-bottom: 40px; background: #e9eaed; }
-.links .info { background: #fff; padding: 15px; transition: 0.4s; margin-top: 20px; }
-.info:hover{ box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3); cursor: pointer; }
-.link .info span { color: #ffbb06; font-size: 30px; }
-.link .info h6 { margin-top: 10px; margin-bottom: 10px; }
-.link .info p.p-style{ font-family: sans-serif; font-weight: bold; }
+.info { background: #fff; padding: 15px; transition: 0.4s; margin-top: 20px; }
+.links > .container > .row > div > .info:hover{ box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3); cursor: pointer; }
+.info > a:hover{ cursor: pointer; font-weight: bold; }
+.info span { color: #ffbb06; font-size: 30px; }
+.info h6 { margin-top: 10px; margin-bottom: 10px; }
+.info p.p-style{ font-family: sans-serif; font-weight: bold; }
+#servicios{background-color: #e9eaed}
+section{ padding-top: 25px; padding-bottom: 25px; }
 /*-- footer --*/
 .tarjeta{ padding-bottom: 20px; }
 #bureau_veritas{ padding-top: 20px; }
 .footer-copyright{ padding-top: 20px !important; padding-bottom: 0px !important; }
 #terminos-condiciones:hover{cursor:pointer}
+#servicios > .container > .row > div > .info {text-align: center;}
+#servicios > .container > .row > div > .info > p {text-align: left;}
+#servicios > .container > .row > div > .info > h6 {font-weight: bold;}
+#servicios > .container > .row > div > .info > a {text-align: right;}
