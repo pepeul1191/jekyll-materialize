@@ -3,6 +3,7 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.slider').slider();
   $('.modal').modal();
+  $('select').formSelect();
 
   $(window).scroll(function(){
     if($(window).scrollTop() > 300){

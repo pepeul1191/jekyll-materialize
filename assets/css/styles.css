@@ -4,9 +4,8 @@ body{ font-family: 'Raleway', sans-serif; }
 .color-grey{ color: #616161; }
 .oculto {display: none;}
 .fondo-primary{    background-color: var(--primary-color); color: #FFF;}
-ul.browser-default li {
-  list-style-type: initial;
-}
+ul.browser-default li { list-style-type: initial; }
+.select-wrapper+label{ font-size: 1.1rem; color: var(--primary-color); font-weight: bold; top: -35px;}
 /*-- nav --*/
 .nav-wrapper > .brand-logo{ padding: 10px !important; }
 .color-primary { color: var(--primary-color) !important; }
@@ -20,6 +19,9 @@ nav i.material-icons{ font-size: 40px; }
 .slides > li > .caption > h4 { font-weight: bold; }
 .slider > .slides > li .caption { top: 40%; left: 15%; padding: 20px; }
 .slides{ height: 700px; }
+/*-- odontologos  --*/
+#odontologos > .container > hr {margin-bottom: 40px;}
+.dropdown-content li>span {color: #616161}
 /*-- seccion links--*/
 #links { padding-top: 40px; padding-bottom: 40px; background: #e9eaed; }
 .info { background: #fff; padding: 15px; transition: 0.4s; margin-top: 20px; }
@@ -35,6 +37,7 @@ section{ padding-top: 25px; padding-bottom: 25px; }
 #bureau_veritas{ padding-top: 20px; }
 .footer-copyright{ padding-top: 20px !important; padding-bottom: 0px !important; }
 #terminos-condiciones:hover{cursor:pointer}
+/*-- servicios  --*/
 #servicios > .container > .row > div > .info {text-align: center;}
 #servicios > .container > .row > div > .info > p {text-align: left;}
 #servicios > .container > .row > div > .info > h6 {font-weight: bold;}
