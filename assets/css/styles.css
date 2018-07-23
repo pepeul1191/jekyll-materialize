@@ -24,6 +24,39 @@ nav i.material-icons{ font-size: 40px; }
 .dropdown-content li>span {color: #616161}
 .select-wrapper .caret { fill: #616161; }
 .select-wrapper input.select-dropdown { border-bottom: 1px solid #616161;;}
+/*-- odontologos  --*/
+.card-flip-container {
+  cursor: pointer;
+  height: 150px;
+  perspective: 600;
+  position: relative;
+  width: 150px;
+}
+.card-flip {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
+.card-flip:hover {
+  transform: rotateY(180deg);
+}
+.card-flip .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+.card-flip .back {
+  background: #eaeaed;
+  color: #0087cc;
+  line-height: 150px;
+  text-align: center;
+  transform: rotateY(180deg);
+}
 /*-- seccion links--*/
 #links { padding-top: 40px; padding-bottom: 40px; background: #e9eaed; }
 .info { background: #fff; padding: 15px; transition: 0.4s; margin-top: 20px; }
