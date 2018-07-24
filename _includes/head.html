@@ -18,5 +18,8 @@
   {% endif %}
   <script type="text/javascript">
     var BASE_URL = '{{ site.url }}';
+    var API_URL = '{{ site.data.env.url_rest }}';
+    var CSRF_KEY = '{{ site.data.env.csrf_key }}';
+    var CSRF = '{{ site.data.env.csrf_val }}';
   </script>
 </head>

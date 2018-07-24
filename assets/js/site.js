@@ -1,10 +1,10 @@
 $(document).ready(function(){
+  // componentes de marterialize
   $('.parallax').parallax();
   $('.sidenav').sidenav();
   $('.slider').slider();
   $('.modal').modal();
-  $('select').formSelect();
-
+  // navbar
   $(window).scroll(function(){
     if($(window).scrollTop() > 300){
   	  $('nav').addClass('white');
@@ -18,9 +18,14 @@ $(document).ready(function(){
       $('.brand-logo img').attr('src',BASE_URL + '/assets/img/logo-coa-blanco.png');
     }
   });
-
+  // slider
   var elems = document.querySelectorAll('.slider');
   var instances = M.Slider.init(elems, {'height' : 770, 'indicators' : true});
+  // cargar información a los selects
+  llenarCombo('cbmObontologoDistrito', 'sede/lima');
+  llenarCombo('cbmObontologoProvincia', 'sede/provincia');
+  llenarCombo('cbmContactoDepartamento', 'sede/departamento');
+  $('select').formSelect();
 });
 
 $('#terminos-condiciones').click(function(){
@@ -47,4 +52,26 @@ function myMap() {
     zoom: 15,
   }
   var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
+}
+
+function llenarCombo(idCombo, uri){
+  $.ajax({
+	  url: API_URL + uri,
+	  type: "GET",
+	  async: false,
+    data: {},
+		headers: {
+			[CSRF_KEY]: CSRF,
+		},
+	  success: function(data) {
+      var lista = JSON.parse(data);
+      var combo = document.getElementById(idCombo);
+	    for(var i = 0; i < lista.length; i++){
+        var option = document.createElement('option');
+        option.value = lista[i].id;
+        option.text = lista[i].nombre;
+        combo.appendChild(option);
+      }
+	  }
+	});
 }
