@@ -80,13 +80,54 @@ function llenarCombo(idCombo, uri){
 
 function mostrarOdontologos(){
   var sedeId = this.value;
+  console.log(this);
   /*
   <div class="modal-content">
     <h4>Sede</h4>
   </div>
   */
-  $('#modalBottom').empty();
+  $('#modalPopUp').empty();
   var btnModal = document.getElementById('modal-popup-btn');
+  $.ajax({
+	  url: API_URL + 'sede/director_odontologos/' + sedeId,
+	  type: "GET",
+	  async: false,
+    data: {},
+		headers: {
+			[CSRF_KEY]: CSRF,
+		},
+	  success: function(data) {
+      var data = JSON.parse(data);
+      var odontologos = data.odontologos;
+      var director = data.director;
+      var modalBody = '<div class="modal-content"><h4 class="color-primary bold">SEDE ' + director.sede + '</h4>';
+      var modalBody = modalBody + '<p class="bold">' + director.director + '<br>' + director.titulo + '</p>';
+      var tabla = '<table><thead class="color-primary"><tr class="bold"><th>APELLIDOS</th><th>NOMBRE(S)</th><th>ESPECIALIDAD</th><th>COP</th><th>RNE</th></tr></thead><tbody>';
+	    for(var i = 0; i < odontologos.length; i++){
+        tabla = tabla + '<tr>';
+        tabla = tabla + '<td>';
+        tabla = tabla + odontologos[i].paterno + ' ' + odontologos[i].materno;
+        tabla = tabla + '</td>';
+        tabla = tabla + '<td>';
+        tabla = tabla + odontologos[i].nombres;
+        tabla = tabla + '</td>';
+        tabla = tabla + '<td>';
+        tabla = tabla + odontologos[i].especialidad;
+        tabla = tabla + '</td>';
+        tabla = tabla + '<td>';
+        tabla = tabla + odontologos[i].cop;
+        tabla = tabla + '</td>';
+        tabla = tabla + '<td>';
+        tabla = tabla + odontologos[i].rne;
+        tabla = tabla + '</td>';
+        tabla = tabla + '</tr>';
+      }
+      tabla = tabla + '</tbody></table>';
+      modalBody = modalBody + tabla;
+      modalBody = modalBody + '</div>';
+      document.getElementById('modalPopUp').innerHTML = modalBody;
+	  }
+	});
   btnModal.click();
 }
 
