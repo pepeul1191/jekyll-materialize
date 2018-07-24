@@ -32,9 +32,8 @@ $(document).ready(function(){
 });
 
 $('#terminos-condiciones').click(function(){
-  $('#modal1').empty();
-  $('#modal-btn').click();
-  $('#modal1').css('max-height', '50%');
+  $('#modalBottom').empty();
+  $('#modalBottom').css('max-height', '75%');
   var template = null;
 	$.ajax({
 	   url: BASE_URL + '/modals/terminos-condiciones.html',
@@ -44,8 +43,8 @@ $('#terminos-condiciones').click(function(){
 	     template = source;
 	   }
 	});
-  $('#modal1').append(template);
-  var btnModal = document.getElementById('modal-btn');
+  $('#modalBottom').append(template);
+  var btnModal = document.getElementById('modal-bottom-btn');
   btnModal.click();
 });
 
@@ -80,7 +79,15 @@ function llenarCombo(idCombo, uri){
 }
 
 function mostrarOdontologos(){
-  alert(this.value);
+  var sedeId = this.value;
+  /*
+  <div class="modal-content">
+    <h4>Sede</h4>
+  </div>
+  */
+  $('#modalBottom').empty();
+  var btnModal = document.getElementById('modal-popup-btn');
+  btnModal.click();
 }
 
 function cargasSedes(){
