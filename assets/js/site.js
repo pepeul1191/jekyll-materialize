@@ -26,6 +26,9 @@ $(document).ready(function(){
   llenarCombo('cbmObontologoProvincia', 'sede/provincia');
   llenarCombo('cbmContactoDepartamento', 'sede/departamento');
   $('select').formSelect();
+  document.getElementById('cbmObontologoDistrito').addEventListener('change', mostrarOdontologos, false);
+  document.getElementById('cbmObontologoProvincia').addEventListener('change', mostrarOdontologos, false);
+  document.getElementById('cbmContactoDepartamento').addEventListener('change', cargasSedes, false);
 });
 
 $('#terminos-condiciones').click(function(){
@@ -74,4 +77,12 @@ function llenarCombo(idCombo, uri){
       }
 	  }
 	});
+}
+
+function mostrarOdontologos(){
+  alert(this.value);
+}
+
+function cargasSedes(){
+  alert(this.value);
 }
