@@ -49,18 +49,29 @@ $('#terminos-condiciones').click(function(){
   btnModal.click();
 });
 
-function myMap(latitud, longitud) {
+function myMap(latitud, longitud, contentString, title) {
   if(latitud == null){
     latitud = -12.097211298666057;
   }
   if(longitud == null){
     longitud = -77.03266450118309;
   }
+  if(title == null){
+    title = '<b>CEDE CENTRAL</b>';
+  }
+  if(contentString == null){
+    contentString = title + '<br>' + 'AV. JUAN DE ARONA 425, <br>San Isidro, Lima, Perú';
+  }else{
+    contentString = '<b>' + title + '</b>' + '<br>' + contentString;
+  }
   var mapOptions = {
     center: new google.maps.LatLng(latitud, longitud),
     zoom: 15,
   }
   var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
   var image = BASE_URL + '/assets/img/marker.png';
   var marker = new google.maps.Marker({
     position: {
@@ -69,9 +80,12 @@ function myMap(latitud, longitud) {
     },
     map: map,
     icon: image,
-    //title: 'Hello World!'
+    title: title,
   });
-
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+  infowindow.open(map,marker);
 }
 
 function llenarCombo(idCombo, uri){
@@ -164,6 +178,8 @@ function cargasSedes(){
           option.text = data[i].nombre;
           option.setAttribute('latitud', data[i].latitud);
           option.setAttribute('longitud', data[i].longitud);
+          option.setAttribute('direccion', data[i].direccion);
+          option.setAttribute('title', 'SEDE ' + data[i].nombre);
           combo.appendChild(option);
           document.getElementById('cbmContactoSede').disabled = false;
         }
@@ -176,7 +192,9 @@ function cargasSedes(){
         document.getElementById('cbmContactoSede').disabled = true;
         var latitud = data.latitud;
         var longitud = data.longitud;
-        myMap(latitud, longitud);
+        var contentString = data.direccion;
+        var title = '<b>SEDE ' + data.nombre+ '</b>';
+        myMap(latitud, longitud, contentString, title);
       }
       $('#cbmContactoSede').formSelect();
 	  }
@@ -187,5 +205,8 @@ function mapaSedeLima(){
   var option = document.getElementById('cbmContactoSede').options[this.value];
   var latitud = parseFloat(option.getAttribute('latitud'));
   var longitud = parseFloat(option.getAttribute('longitud'));
-  myMap(latitud, longitud);
+  var contentString = option.getAttribute('direccion');
+  var title = option.getAttribute('title');
+  myMap(latitud, longitud, contentString, title);
+
 }
