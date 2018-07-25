@@ -29,6 +29,7 @@ $(document).ready(function(){
   document.getElementById('cbmObontologoDistrito').addEventListener('change', mostrarOdontologos, false);
   document.getElementById('cbmObontologoProvincia').addEventListener('change', mostrarOdontologos, false);
   document.getElementById('cbmContactoDepartamento').addEventListener('change', cargasSedes, false);
+  document.getElementById('cbmContactoSede').addEventListener('change', mapaSedeLima, false);
 });
 
 $('#terminos-condiciones').click(function(){
@@ -37,7 +38,7 @@ $('#terminos-condiciones').click(function(){
   var template = null;
 	$.ajax({
 	   url: BASE_URL + '/modals/terminos-condiciones.html',
-	   type: "GET",
+	   type: 'GET',
 	   async: false,
 	   success: function(source) {
 	     template = source;
@@ -48,18 +49,33 @@ $('#terminos-condiciones').click(function(){
   btnModal.click();
 });
 
-function myMap() {
+function myMap(latitud, longitud) {
+  if(latitud == null){
+    latitud = -12.097211298666057;
+  }
+  if(longitud == null){
+    longitud = -77.03266450118309;
+  }
   var mapOptions = {
-    center: new google.maps.LatLng(-12.097211298666057, -77.03266450118309),
+    center: new google.maps.LatLng(latitud, longitud),
     zoom: 15,
   }
-  var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
+  var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+  var marker = new google.maps.Marker({
+    position: {
+      lat: parseFloat(latitud),
+      lng: parseFloat(longitud),
+    },
+    map: map,
+    //title: 'Hello World!'
+  });
+
 }
 
 function llenarCombo(idCombo, uri){
   $.ajax({
 	  url: API_URL + uri,
-	  type: "GET",
+	  type: 'GET',
 	  async: false,
     data: {},
 		headers: {
@@ -80,17 +96,10 @@ function llenarCombo(idCombo, uri){
 
 function mostrarOdontologos(){
   var sedeId = this.value;
-  console.log(this);
-  /*
-  <div class="modal-content">
-    <h4>Sede</h4>
-  </div>
-  */
   $('#modalPopUp').empty();
-  var btnModal = document.getElementById('modal-popup-btn');
   $.ajax({
 	  url: API_URL + 'sede/director_odontologos/' + sedeId,
-	  type: "GET",
+	  type: 'GET',
 	  async: false,
     data: {},
 		headers: {
@@ -102,7 +111,7 @@ function mostrarOdontologos(){
       var director = data.director;
       var modalBody = '<div class="modal-content"><h4 class="color-primary bold">SEDE ' + director.sede + '</h4>';
       var modalBody = modalBody + '<p class="bold">' + director.director + '<br>' + director.titulo + '</p>';
-      var tabla = '<table><thead class="color-primary"><tr class="bold"><th>APELLIDOS</th><th>NOMBRE(S)</th><th>ESPECIALIDAD</th><th>COP</th><th>RNE</th></tr></thead><tbody>';
+      var tabla = '<table class="striped"><thead class="color-primary"><tr class="bold"><th>APELLIDOS</th><th>NOMBRE(S)</th><th>ESPECIALIDAD</th><th>COP</th><th>RNE</th></tr></thead><tbody>';
 	    for(var i = 0; i < odontologos.length; i++){
         tabla = tabla + '<tr>';
         tabla = tabla + '<td>';
@@ -128,9 +137,53 @@ function mostrarOdontologos(){
       document.getElementById('modalPopUp').innerHTML = modalBody;
 	  }
 	});
+  var btnModal = document.getElementById('modal-popup-btn');
   btnModal.click();
 }
 
 function cargasSedes(){
-  alert(this.value);
+  var departamentoId = this.value;
+  $.ajax({
+	  url: API_URL + 'sede/departamento/' + departamentoId,
+	  type: 'GET',
+	  async: false,
+    data: {},
+		headers: {
+			[CSRF_KEY]: CSRF,
+		},
+	  success: function(data) {
+      var data = JSON.parse(data);
+      var combo = document.getElementById('cbmContactoSede');
+      $('#cbmContactoSede').empty();
+      if(departamentoId == 0){
+        for(var i = 0; i < data.length; i++){
+          var option = document.createElement('option');
+          option.value = data[i].id;
+          option.text = data[i].nombre;
+          option.setAttribute('latitud', data[i].latitud);
+          option.setAttribute('longitud', data[i].longitud);
+          combo.appendChild(option);
+          document.getElementById('cbmContactoSede').disabled = false;
+        }
+        myMap(data[0].latitud, data[0].longitud);
+      }else{
+        var option = document.createElement('option');
+        option.value = data.id;
+        option.text = 'SEDE ' + data.nombre;
+        combo.appendChild(option);
+        document.getElementById('cbmContactoSede').disabled = true;
+        var latitud = data.latitud;
+        var longitud = data.longitud;
+        myMap(latitud, longitud);
+      }
+      $('#cbmContactoSede').formSelect();
+	  }
+	});
+}
+
+function mapaSedeLima(){
+  var option = document.getElementById('cbmContactoSede').options[this.value];
+  var latitud = parseFloat(option.getAttribute('latitud'));
+  var longitud = parseFloat(option.getAttribute('longitud'));
+  myMap(latitud, longitud);
 }
