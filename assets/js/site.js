@@ -61,12 +61,14 @@ function myMap(latitud, longitud) {
     zoom: 15,
   }
   var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+  var image = BASE_URL + '/assets/img/marker.png';
   var marker = new google.maps.Marker({
     position: {
       lat: parseFloat(latitud),
       lng: parseFloat(longitud),
     },
     map: map,
+    icon: image,
     //title: 'Hello World!'
   });
 
