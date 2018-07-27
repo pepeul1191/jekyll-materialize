@@ -22,9 +22,9 @@ $(document).ready(function(){
   var elems = document.querySelectorAll('.slider');
   var instances = M.Slider.init(elems, {'height' : 770, 'indicators' : true});
   // cargar información a los selects
-  llenarCombo('cbmObontologoDistrito', 'sede/lima');
-  llenarCombo('cbmObontologoProvincia', 'sede/provincia');
-  llenarCombo('cbmContactoDepartamento', 'sede/departamento');
+  llenarCombo('cbmObontologoDistrito', 'api/sede/lima');
+  llenarCombo('cbmObontologoProvincia', 'api/sede/provincia');
+  llenarCombo('cbmContactoDepartamento', 'api/sede/departamento');
   $('select').formSelect();
   document.getElementById('cbmObontologoDistrito').addEventListener('change', mostrarOdontologos, false);
   document.getElementById('cbmObontologoProvincia').addEventListener('change', mostrarOdontologos, false);
@@ -114,7 +114,7 @@ function mostrarOdontologos(){
   var sedeId = this.value;
   $('#modalPopUp').empty();
   $.ajax({
-	  url: API_URL + 'sede/director_odontologos/' + sedeId,
+	  url: API_URL + 'api/sede/director_odontologos/' + sedeId,
 	  type: 'GET',
 	  async: false,
     data: {},
@@ -160,7 +160,7 @@ function mostrarOdontologos(){
 function cargasSedes(){
   var departamentoId = this.value;
   $.ajax({
-	  url: API_URL + 'sede/departamento/' + departamentoId,
+	  url: API_URL + 'api/sede/departamento/' + departamentoId,
 	  type: 'GET',
 	  async: false,
     data: {},
