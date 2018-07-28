@@ -24,6 +24,7 @@ Comandos:
 + https://www.w3schools.com/howto/howto_css_split_screen.asp
 + https://codepen.io/osmanyazici/pen/eJxmxo
 + https://cloud.google.com/maps-platform/?hl=es
++ https://codepen.io/hiteshsahu/pen/BmNePZ
 
 ---
 

@@ -4,6 +4,11 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.slider').slider();
   $('.modal').modal();
+  $('.carousel').carousel({
+    dist:0,
+    shift:0,
+    padding:30,
+  });
   // navbar
   $(window).scroll(function(){
     if($(window).scrollTop() > 300){
