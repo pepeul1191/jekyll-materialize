@@ -6,6 +6,10 @@ body{ font-family: 'Raleway', sans-serif; }
 .fondo-primary{    background-color: var(--primary-color); color: #FFF;}
 ul.browser-default li { list-style-type: initial; }
 .select-wrapper+label{ font-size: 1.1rem; color: var(--primary-color); font-weight: bold; top: -35px;}
+.icono-li{  list-style-image: url('../img/li.png'); }
+ul:not(.browser-default), ul:not(.browser-default)>li{ list-style-type: disc; }
+.ul-list{ padding-left: 20px !important; }
+.ul-sub-list{ padding-left: 20px !important; }
 /*-- forms --*/
 .input-field{ margin-top: 0rem; margin-bottom: 0rem;}
 textarea.materialize-textarea{height: 10rem;}
@@ -44,6 +48,7 @@ input[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:bef
 .btn-floating:hover{background: var(--secondary-color);}
 .card .card-content { padding: 10px; }
 #tecnologia >.carousel {bottom: 35px;}
+#tecnologia {padding-bottom: 0px;}
 /*-- seccion links--*/
 #links { padding-top: 40px; padding-bottom: 40px; background: #e9eaed; }
 .info { background: #fff; padding: 15px; transition: 0.4s; margin-top: 20px; }
