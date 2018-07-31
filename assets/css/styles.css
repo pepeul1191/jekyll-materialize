@@ -22,6 +22,7 @@ textarea.materialize-textarea{height: 10rem;}
 nav { position: fixed; background: rgba(0, 0 ,0, 0.25); padding: 0px 20px; z-index: 100; }
 nav i.material-icons{ font-size: 40px; }
 .indicators > .active { background-color: var(--primary-color) !important; }
+#nav-mobile:not(.browser-default), #nav-mobile:not(.browser-default)>li{list-style-type: none !important;}
 /*-- slider--*/
 .slides > li > .caption { background-color: rgba(27, 110 , 138, 0.25); }
 .slides > li > .caption > h4, .slides > li > .caption > h5 { color: #FFF !important; }
