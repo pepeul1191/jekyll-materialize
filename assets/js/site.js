@@ -215,3 +215,23 @@ function mapaSedeLima(){
   myMap(latitud, longitud, contentString, title);
 
 }
+
+$('.load-modal').click(function(){
+  var template = this.getAttribute('template');
+  $('#modalPopUp').empty();
+  $.ajax({
+	  url: BASE_URL + '/modals/' + template + '.html',
+	  type: 'GET',
+	  async: false,
+    data: {},
+		headers: {
+			[CSRF_KEY]: CSRF,
+		},
+    success: function(source) {
+      template = source;
+    }
+	});
+  $('#modalPopUp').append(template);
+  var btnModal = document.getElementById('modal-popup-btn');
+  btnModal.click();
+});

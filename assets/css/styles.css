@@ -12,6 +12,8 @@ ul:not(.browser-default), ul:not(.browser-default)>li{ list-style-type: disc; }
 .ul-sub-list{ padding-left: 20px !important; }
 .ol-count { counter-reset: item }
 .ol-count > li:before { content: counters(item, ".") " "; counter-increment: item }
+.modal-content{ height: calc(100% - 25px) !important;}
+.to-uppercase{text-transform: uppercase;}
 /*-- forms --*/
 .input-field{ margin-top: 0rem; margin-bottom: 0rem;}
 textarea.materialize-textarea{height: 10rem;}
