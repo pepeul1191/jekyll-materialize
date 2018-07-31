@@ -26,6 +26,10 @@ Comandos:
 + https://cloud.google.com/maps-platform/?hl=es
 + https://codepen.io/hiteshsahu/pen/BmNePZ
 
+## Diseño del Email
+
++ http://responsiveemailpatterns.com/patterns/layout/shrink-wrap.html
+
 ---
 
 Fuentes:
